@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>A0001:新規商品登録 | ヤスイ家具オンラインショップ</title>
+<meta name="description" content="新規商品登録を行います。">
+<meta name="keywords" content="新規, 商品, 登録">
+<link rel="stylesheet" type="text/css" href="./css/site.css">
+<link rel="stylesheet" type="text/css" href="./css/validationEngine.jquery.css">
+
+<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<![endif]-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/script.js"></script>
+<script type="text/javascript" src="./js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="./js/jquery.validationEngine-ja.js"></script>
+
+
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body>
+	
+
+
+
+
+
+
+<h1 id="headerlogo">ヤスイ家具オンラインショップ管理画面</h1>
+<hr>
+
+	
+
+
+
+
+
+
+
+<div id="nav">
+	<ul>
+		
+			<li>顧客ID［admin
+				（管理者）］</li>
+		
+		
+			<li><a href="http://localhost:8080/YasuiMobile/AddItem">商品追加</a></li>
+			<li><a href="http://localhost:8080/YasuiMobile/ChangeStock">在庫数量変更</a></li>
+			<li><a href="http://localhost:8080/YasuiMobile/RemoveItem">商品削除</a></li>
+		
+			<li><a href="http://localhost:8080/YasuiMobile/ListItem">商品の選択（クライアント系画面）</a></li>
+			<li><a href="http://localhost:8080/YasuiMobile/Logout">ログアウト</a></li>
+	</ul>
+</div>
+
+
+	<hr>
+
+	
+	
+		
+		
+			<script>
+				jQuery(document).ready(function() {
+					// binds form submission and fields to the validation engine
+					jQuery("#formID").validationEngine();
+				});
+			</script>
+
+			<form method="POST" action="http://localhost:8080/YasuiMobile/AddItemConfirm" id="formID" class="formular">
+				<fieldset>
+					<legend>商品ID</legend>
+					<input size="8" value="00007" class="validate[required,custom[integer],max[99999]] text-input" type="text" name="item_id" id="itemid">
+					（整数5桁まで）商品IDの最大値に1加算した値が、初期状態では表示されています
+				</fieldset>
+				<fieldset>
+					<legend>商品名</legend>
+					<div class="item_nameformError parentFormformID formError" style="opacity: 0.87; position: absolute; top: 240.063px; left: 390px; margin-top: -37px;"><div class="formErrorContent">* 必須項目です<br></div><div class="formErrorArrow"><div class="line10"><!-- --></div><div class="line9"><!-- --></div><div class="line8"><!-- --></div><div class="line7"><!-- --></div><div class="line6"><!-- --></div><div class="line5"><!-- --></div><div class="line4"><!-- --></div><div class="line3"><!-- --></div><div class="line2"><!-- --></div><div class="line1"><!-- --></div></div></div><input size="52" class="validate[required,maxSize[50]] text-input" type="text" name="item_name" id="item_name" autofocus="" placeholder="商品名（色）"> （最大50文字まで）商品名（色）の形式で入力してください
+				</fieldset>
+				<fieldset>
+					<legend>商品画像URL</legend>
+					<input size="52" value="http://localhost:8080/YasuiMobile/images/" class="validate[required,maxSize[50]] text-input" type="url" name="imgurl" id="imgurl" placeholder="http://localhost:8080/YasuiMobile/images/nnnnn.jpg">
+					（最大50文字まで）http://ホスト名:ポート番号/YasuiMobile/images/画像名
+				</fieldset>
+				<fieldset>
+					<legend>商品サイズ</legend>
+					<input size="52" class="validate[required,maxSize[50]] text-input" type="text" name="item_size" id="item_size" pattern="\d+x\d+x\d+" placeholder="150x75x85"> （最大50文字まで）たてxよこx高さ 単位：cm （例：150x75x85）
+				</fieldset>
+				<fieldset>
+					<legend>商品価格</legend>
+					<input size="10" class="validate[required,custom[integer],max[99999999]] text-input" type="number" name="price" id="price" placeholder="99999999" min="0" max="99999999">
+					（整数8桁まで）通貨フォーマットで記述する必要はありません
+				</fieldset>
+				<fieldset>
+					<legend>入庫数量</legend>
+					<input size="10" class="validate[required,custom[integer],max[99999999]] text-input" type="number" name="stock" id="stock" placeholder="99999999" min="0" max="99999999">
+					（整数8桁まで）
+				</fieldset>
+				<div id="goreturn">
+				<input class="submitButton" type="submit" name="submit" value="確認">
+				<input type="reset" name="reset" value="リセット">
+				</div>
+			</form>
+<hr><footer id="footer">
+Copyright 2009-2018 Yasui Furniture Inc, All rights reserved.
+<a href="http://localhost:8080/YasuiMobile/index">ヤスイ家具株式会社</a></footer>
+
+
+</body></html>
